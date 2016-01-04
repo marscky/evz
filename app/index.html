@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="evz" ng-controller="AppCtrl as app">
+<head>
+  <meta charset="UTF-8">
+  <title>EVZ</title>
+
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="build/style.css">
+</head>
+<body>
+  <header id="header">
+    <h1>EVZ</h1>
+    <div class="menu">
+      <i class="fa fa-cog" ng-click="app.showMenu()"></i>
+    </div>
+  </header>
+
+  <main id="main" ui-view></main>
+
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="../node_modules/moment/min/moment.min.js"></script>
+  <script src="build/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="content">
+  <div class="content-disabler" ng-class="{ 'disabler-active': login.errorMessage && !login.isModalClosed }"></div>
+
+  <h1>Login</h1>
+
+  <form class="form" name="loginForm" novalidate ng-disabled="login.errorMessage" ng-submit="loginForm.$invalid || login.login()">
+    <ul class="form-error" ng-show="loginForm.$submitted || loginForm.uid.$touched">
+      <li ng-show="loginForm.uid.$error.required">UID is required</li>
+      <li ng-show="loginForm.pin.$error.required">PIN is required</li>
+    </ul>
+
+    <!-- ng requires submit to be present -->
+    <input type="submit" style="display: none;">
+
+    <input placeholder="UID" type="text" name="uid" ng-model="login.uid" required>
+    <input placeholder="PIN" type="password" name="pin" ng-model="login.pin" required>
+    <div class="form-submit btn"  ng-class="{ 'form-in-progress': login.inProgress }" ng-click="loginForm.$invalid || login.login()">
+      Submit
+      <div class="loader"><div class="lo-circular"></div></div>
+    </div>
+  </form>
+</div>
+
+<div class="modal modal-error" ng-show="login.errorMessage">
+  <i class="fa fa-close" ng-click="login.closeModal()"></i>
+  <h2>Error</h2>
+  <hr>
+  {{ login.errorMessage.message || 'An error has occurred.' }}
+</div>

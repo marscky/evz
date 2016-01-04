@@ -1,0 +1,34 @@
+{
+  "name": "evz",
+  "version": "0.1.0",
+  "description": "Humanized, hassle-free evaluation",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron --debug=5858 .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mars Cheng <mc.return.void@gmail.com>",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "electron-packager": "^5.2.0",
+    "electron-prebuilt": "^0.36.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-sass": "^2.1.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-ui-router": "^0.2.15",
+    "auto-launch": "^1.1.1",
+    "cheerio": "^0.19.0",
+    "cron": "^1.1.0",
+    "denodeify": "^1.2.1",
+    "keytar": "^3.0.0",
+    "lodash": "^3.10.1",
+    "menubar": "^3.0.0",
+    "request": "^2.67.0"
+  }
+}

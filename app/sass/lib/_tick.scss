@@ -1,0 +1,7 @@
+@mixin tick ($tick-size) {
+  height: $tick-size;
+  margin: 0 auto;
+  max-width: $tick-size;
+  max-height: $tick-size;
+  width: $tick-size;
+}

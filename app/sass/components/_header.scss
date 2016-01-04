@@ -1,0 +1,32 @@
+#header {
+  $v-padding: 20px;
+
+  background-color: $c-bg;
+  border-bottom: 1.5px solid $c-inactive;
+  box-shadow: 0 2px 5px 1px rgba(216, 216, 216, 0.53);
+  left: 0;
+  padding: $v-padding $main-margin $v-padding - 5 $main-margin;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+
+  h1 {
+    margin: 0;
+  }
+
+  .menu {
+    bottom: 50%;
+    color: $c-inactive;
+    font-size: 120%;
+    cursor: pointer;
+    position: absolute;
+    right: $main-margin;
+    transform: translateY(50%);
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color;
+    }
+  }
+}

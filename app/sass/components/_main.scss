@@ -1,0 +1,20 @@
+#main {
+  padding: 34px $main-margin;
+  // padding: 44px $main-margin 0;
+  position: relative;
+  margin-top: 60px;
+}
+
+.content-disabler {
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  &.disabler-active {
+    z-index: 0;
+  }
+}

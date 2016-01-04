@@ -1,0 +1,25 @@
+.btn {
+  background-color: $c-bg;
+  border: 1px solid $color;
+  border-radius: 2px;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $f-stack;
+  font-size: inherit;
+  outline: none;
+  padding: 13px 15px 10px;
+  transition: background-color 0.2s, color 0.2s, width 0.2s;
+  -webkit-user-select: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color;
+    color: $c-fg-bright;
+  }
+
+  &:active {
+    background-color: $c-bg;
+    color: $color;
+  }
+}

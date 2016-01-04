@@ -1,0 +1,50 @@
+.all-done {
+  .tick {
+    @include tick($f-size*2);
+    margin: 0 auto;
+    fill: $color;
+  }
+}
+
+.eval-list {
+  border-collapse: collapse;
+  font-size: $f-size * 0.9;
+  line-height: 1.2;
+
+  .item-error {
+    color: $c-error;
+  }
+
+  th,
+  td {
+    padding: 7px 0;
+    word-break: break-all;
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: left;
+    width: 70%;
+  }
+
+  th:last-child,
+  td:last-child {
+    text-align: center;
+    width: 30%;
+  }
+
+  td:last-child {
+    .lo-circular {
+      @include lo-circular($f-size, $color, $c-inactive);
+      margin: 0 auto;
+    }
+
+    .tick {
+      @include tick($f-size);
+      margin: 0 auto;
+      fill: $color;
+    }
+  }
+
+
+}

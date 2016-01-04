@@ -1,0 +1,33 @@
+<div class="content">
+  <div class="content-disabler" ng-class="{ 'disabler-active': eval.grabListError }"></div>
+
+  <h1>Evaluation</h1>
+
+  <div class="all-done" ng-show="eval.allComplete">
+    <p>Completed at: {{ eval.lastRun }}</p>
+  </div>
+
+  <table class="eval-list">
+    <tr>
+      <th>Title</th>
+      <th>Status</th>
+    </tr>
+    <tr ng-repeat="item in eval.list" ng-class="{ 'item-error': item.error }">
+      <td>{{ item.title }}</td>
+      <td>
+        <div ng-if="item.inProgress" class="lo-circular"></div>
+        <div ng-if="item.done" class="tick"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 448.8 448.8" xml:space="preserve" enable-background="new 0 0 448.8 448.8"><g id="check"><polygon points="142.8 323.85 35.7 216.75 0 252.45 142.8 395.25 448.8 89.25 413.1 53.55 "/></g></svg></div>
+        <div ng-if="item.error">{{ item.error.message || 'Error' }}</div>
+        <div ng-if="!item.inProgress && !item.done && !item.error">Pending</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="modal modal-error modal-no-close" ng-show="eval.grabListError">
+  <i class="fa fa-close" ng-click="false && closeModal()"></i>
+  <h2>Error</h2>
+  <hr>
+  {{ eval.grabListError.message || 'An error has occurred.' }}
+  <button class="btn" ng-click="eval.gotoLogin()">Login again</button>
+</div>

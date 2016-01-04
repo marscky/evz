@@ -1,0 +1,13 @@
+# Dependency directory
+node_modules/
+
+# Logs
+*.log
+
+# Build files
+EVZ-*/
+app/assets/settings.json
+app/build/
+
+# OSX
+.DS_Store

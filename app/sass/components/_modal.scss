@@ -1,0 +1,60 @@
+.modal {
+  background-color: $c-bg;
+  border-radius: 7px;
+  box-shadow: 0 -1px 8px 1px rgba(214, 214, 214, 0.4),
+              0 4px 10px 3px rgba(214, 214, 214, 0.75);
+  margin: 0 auto;
+  max-height: 186px;
+  overflow: scroll;
+  line-height: 1.2;
+  padding: 20px;
+  position: fixed;
+  margin-top: 50%;
+  top: 0;
+  transform: translateY(-25%);
+  width: 80%;
+
+  &.modal-no-close .fa-close {
+    display: none;
+  }
+
+  .fa-close {
+    color: $c-inactive;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    transition: color 0.3s, transform 0.2s;
+
+    &:hover,
+    &:focus {
+      color: $color;
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+
+  h2 {
+    font: {
+      size: $f-size;
+      weight: $f-bold-weight;
+    }
+    margin: 0;
+    margin-bottom: 12px;
+  }
+
+  hr {
+    border: 1.5px solid $c-inactive;
+    margin-bottom: 12px;
+  }
+
+  .btn {
+    margin-top: 12px;
+  }
+}
+
+.modal-error {
+  color: $c-error;
+}
