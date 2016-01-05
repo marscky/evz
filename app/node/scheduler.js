@@ -14,8 +14,7 @@ try {
   if (!lastRun.isValid()) { throw new Error(); }
 } catch(e) {}
 
-// Next run should be today 21:00
-var nextRun = moment('21', 'H');
+var nextRun;
 
 var singleton;
 
@@ -27,18 +26,20 @@ function Scheduler (mb) {
     cronTime: '0 * * * * 1-7',
     onTick: function () {
       var current = moment();
-      var today = moment().startOf('day');
-      var ytd = moment().subtract(1, 'd').startOf('day');
+
+      // By noon should have new available evaluation items
+      var noon = moment('12', 'H');
+
+      // Next run should be today 21:00
+      nextRun = moment('21', 'H');
 
       // Condition for which we run evaluation
       var condition =
         !lastRun ||
-        (lastRun.isBetween(ytd, today, 'second') &&
+        (lastRun.isBefore(noon) &&
           (current.isSame(nextRun, 'second') ||
-           current.isAfter(nextRun, 'second')
-          )
-        ) ||
-        lastRun.isBefore(ytd);
+           current.isAfter(nextRun, 'second'))
+        );
 
       if (condition) {
         console.log('node-cron onTick');
