@@ -1,0 +1,17 @@
+{
+  "name": "evz-gh-pages",
+  "version": "0.1.0",
+  "description": "gh-pages for evz",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.2.3",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marscky/evz.git"
+  },
+  "author": "Mars Cheng <mc.return.void@gmail.com>",
+  "homepage": "http://marscky.github.io/evz"
+}
