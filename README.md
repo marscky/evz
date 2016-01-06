@@ -2,17 +2,22 @@ EVZ
 ===
 _Humanised, hassle-free evaluation._
 
+
+<img src="http://marscky.github.io/evz/assets/intro.png" alt="EVZ in action" width="400px">
+
 What is it?
 -----------
 A menubar application that automatically runs evaluation for you. Say goodbye to reminder emails.
 
-Download
---------
+Downloads
+---------
+
+Get the latest releases [here](https://github.com/marscky/evz/releases/latest). Only OS X builds are available at the moment.
 
 Setting up
 ----------
 
-Before proceeding, please note that you SHOULD NOT install EVZ on more than one machine at a time.
+Before proceeding, please note that you **SHOULD NOT** install EVZ on more than one machine at a time.
 
 1. Login with your HKU Portal account.
 2. Evaluation will be run automatically for you at 21:00 every day.
