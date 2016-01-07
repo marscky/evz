@@ -29,13 +29,15 @@
         label: 'Logout',
         enabled: false,
         click: function () {
+          console.log('Logout');
           $rootScope.$emit('logout');
         }
       }, {
         label: 'Evaluate now',
         enabled: false,
         click: function () {
-          $state.reload('login');
+          console.log('Reload login');
+          $state.go('login');
         }
       }, {
         label: 'Help',
@@ -88,7 +90,7 @@
 
       if (isLoggedIn) {
         // Try to do eval, by triggering the login flow again
-        $state.reload('login');
+        $state.go('login');
       } else {
         // Notify user to log in
         new Notification('EVZ', {
