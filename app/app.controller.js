@@ -6,6 +6,7 @@
   var remote = electron.remote;
 
   var cred = remote.require('./app/node/cred.js');
+  var settings = remote.require('./app/node/settings.js');
   var Menu = remote.Menu;
   var shell = require('shell');
 
@@ -38,6 +39,14 @@
         click: function () {
           console.log('Reload login');
           $state.go('login');
+        }
+      }, {
+        label: 'Start at login',
+        type: 'checkbox',
+        checked: true,
+        click: function (item) {
+          settings.set('startAtLogin', item.checked);
+          ipcRenderer.send('change-start', item.checked) ;
         }
       }, {
         label: 'Help',

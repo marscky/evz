@@ -1,6 +1,5 @@
 'use strict';
 
-var AutoLaunch = require('auto-launch');
 var ipcMain = require('electron').ipcMain;
 var menubar = require('menubar');
 var mb = menubar({
@@ -13,13 +12,25 @@ var mb = menubar({
   showDockIcon: false
 });
 
-var appLauncher = new AutoLaunch({
-  name: 'EVZ'
-});
+var settings = require('./app/node/settings.js');
 
-appLauncher.isEnabled(function (enabled) {
-  if (enabled) { return; }
-  appLauncher.enable();
+var AutoLaunch = require('auto-launch');
+var appLauncher = new AutoLaunch({ name: 'EVZ' });
+
+function enableLauncher () {
+  appLauncher.isEnabled(function (enabled) {
+    if (enabled) { return; }
+    appLauncher.enable();
+  });
+}
+
+var _startAtLogin = settings.get('startAtLogin');
+if (_startAtLogin === 'undefined' || _startAtLogin === true) {
+  enableLauncher();
+}
+
+ipcMain.on('change-start', function (event, startAtLogin) {
+  return startAtLogin ? enableLauncher() : appLauncher.disable();
 });
 
 ipcMain.on('quit-app', function () {
