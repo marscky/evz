@@ -35,7 +35,7 @@
         label: 'Evaluate now',
         enabled: false,
         click: function () {
-          $state.reload('eval');
+          $state.reload('login');
         }
       }, {
         label: 'Help',
@@ -87,8 +87,8 @@
       console.log('do-eval channel');
 
       if (isLoggedIn) {
-        // Try to do eval
-        $state.reload('eval');
+        // Try to do eval, by triggering the login flow again
+        $state.reload('login');
       } else {
         // Notify user to log in
         new Notification('EVZ', {
