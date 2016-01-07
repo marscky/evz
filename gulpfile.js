@@ -1,5 +1,6 @@
 'use strict';
 
+var _ = require('lodash');
 var del = require('del');
 var gulp = require('gulp');
 var packager = require('electron-packager');
@@ -29,47 +30,47 @@ gulp.task('sass:watch', function () {
   gulp.watch('app/sass/**/*.scss', ['sass']);
 });
 
-gulp.task('build:osx', ['js', 'sass'], function () {
+function getBuildOpts (test) {
   var opts = {
     dir: '.',
     ignore: /EVZ-|gulpfile\.js|app\/(app\..*\.js|sass|((eval|login)\/.*\.js)|sass|assets\/settings\.json)/,
     name: 'EVZ',
-    'build-version': '0.1.2',
+    'build-version': '0.1.3',
     icon: './app/assets/icons/icon',
-    platform: 'darwin',
-    arch: 'x64',
+    platform: ['darwin', 'win32'],
+    arch: ['ia32', 'x64'],
     version: '0.36.1'
   };
 
+  if (test) {
+    return _.defaults({ platform: 'darwin', arch: 'x64', overwrite: true }, opts);
+  } else {
+    return opts;
+  }
+}
+
+gulp.task('build:test', ['js', 'sass'], function () {
+  var opts = getBuildOpts(true);
+
   packager(opts, function done (err, appPath) {
     if (err) {
-      console.log('build:osx error', err);
+      console.log('build error', err);
     } else {
-      console.log('build:osx created at', appPath);
+      console.log('build created at', appPath);
     }
   });
 });
 
-gulp.task('build:win', function () {
-  var opts = {
-    dir: '.',
-    ignore: /EVZ-|gulpfile\.js|app\/(app\..*\.js|sass|((eval|login)\/.*\.js)|sass|assets\/settings\.json)/,
-    name: 'EVZ',
-    'build-version': '0.1.2',
-    icon: './app/assets/icons/icon.ico',
-    platform: 'win32',
-    arch: 'ia32',
-    version: '0.36.1'
-  };
+gulp.task('build', ['js', 'sass'], function () {
+  var opts = getBuildOpts();
 
   packager(opts, function done (err, appPath) {
     if (err) {
-      console.log('build:win error', err);
+      console.log('build error', err);
     } else {
-      console.log('build:win created at', appPath);
+      console.log('build created at', appPath);
     }
   });
 });
-
 
 gulp.task('default', ['js', 'js:watch', 'sass', 'sass:watch']);
