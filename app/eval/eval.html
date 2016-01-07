@@ -5,9 +5,10 @@
 
   <div class="all-done" ng-show="eval.allComplete">
     <p>Completed at: {{ eval.lastRun }}</p>
+    <p ng-show="eval.list.length === 0">All done!</p>
   </div>
 
-  <table class="eval-list">
+  <table class="eval-list" ng-hide="eval.list.length === 0">
     <tr>
       <th>Title</th>
       <th>Status</th>
