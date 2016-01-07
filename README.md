@@ -9,19 +9,32 @@ What is it?
 -----------
 A menubar application that automatically runs evaluation for you. Say goodbye to reminder emails.
 
-Downloads
+Download and install
 ---------
 
-Get the latest releases [here](https://github.com/marscky/evz/releases/latest). Only OS X builds are available at the moment.
+Get the latest releases [here](https://github.com/marscky/evz/releases/latest).
+
+Note that you should install EVZ on **ONLY ONE** machine at a time.
+
+**OS X**
+
+1. Unzip the downloaded file and drag `EVZ.app` to `Applications` folder.
+2. In order to allow EVZ to be opened, `Ctrl` + `Click` or `Right click` on the app and choose `Open` from the menu.
+3. A tick icon should appear in the menubar (see pic above).
+
+**Windows**
+
+1. Unzip the downloaded file and drag `EVZ` folder to `C:\Program files`  folder.
+2. Open `EVZ.exe` inside the folder.
+3. A tick icon should appear in the notifications area of the taskbar.
 
 Setting up
 ----------
 
-Before proceeding, please note that you **SHOULD NOT** install EVZ on more than one machine at a time.
-
-1. Login with your HKU Portal account.
-2. Evaluation will be run automatically for you at 21:00 every day.
-3. It will also start when you turn on your machine.
+1. Before beginning, again ensure that you do not have EVZ installed on other machines.
+2. Login with your HKU Portal account.
+3. Evaluation will be run automatically for you at 21:00 every day.
+4. It will also start automatically when you turn on your machine.
 
 ## FAQ
 
@@ -29,7 +42,7 @@ Before proceeding, please note that you **SHOULD NOT** install EVZ on more than 
 
 Rest assured, EVZ will never send your password to any other parties or store your password in plaintext.
 
-In fact, your credentials are stored on a secure password management service provided by your operating system, by using the Node module [keytar](https://www.npmjs.com/package/keytar).
+In fact, your credentials are stored by a secure password management service provided by your operating system, by using the Node module [keytar](https://www.npmjs.com/package/keytar).
 
 _From its documentation_
 
@@ -41,6 +54,10 @@ _From its documentation_
 **2. How do I remove the credentials stored?**
 
 If you are logged in, choose `Logout` from the menu. This will remove the password stored in your system.
+
+**3. Why do I not see a scheduled run at 21:00?**
+
+In fact, automatic evaluation will not be run if you have performed any evaluation through EVZ after noon on the same day. You can always choose `Evaluate now` from the menu if you want to manually trigger an evaluation.
 
 License
 -------
