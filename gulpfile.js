@@ -34,7 +34,7 @@ gulp.task('build:osx', ['js', 'sass'], function () {
     dir: '.',
     ignore: /EVZ-|gulpfile\.js|app\/(app\..*\.js|sass|((eval|login)\/.*\.js)|sass|assets\/settings\.json)/,
     name: 'EVZ',
-    'build-version': '0.1.0',
+    'build-version': '0.1.2',
     icon: './app/assets/icons/icon',
     platform: 'darwin',
     arch: 'x64',
@@ -49,5 +49,27 @@ gulp.task('build:osx', ['js', 'sass'], function () {
     }
   });
 });
+
+gulp.task('build:win', function () {
+  var opts = {
+    dir: '.',
+    ignore: /EVZ-|gulpfile\.js|app\/(app\..*\.js|sass|((eval|login)\/.*\.js)|sass|assets\/settings\.json)/,
+    name: 'EVZ',
+    'build-version': '0.1.2',
+    icon: './app/assets/icons/icon.ico',
+    platform: 'win32',
+    arch: 'ia32',
+    version: '0.36.1'
+  };
+
+  packager(opts, function done (err, appPath) {
+    if (err) {
+      console.log('build:win error', err);
+    } else {
+      console.log('build:win created at', appPath);
+    }
+  });
+});
+
 
 gulp.task('default', ['js', 'js:watch', 'sass', 'sass:watch']);
