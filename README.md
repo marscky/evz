@@ -64,3 +64,7 @@ License
 Copyright (c) 2016, Mars Cheng. (License: GPL-2.0)
 
 See LICENSE for more info.
+
+Credits
+-------
+Check icon made by <a href="http://www.google.com" title="Google">Google</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>.
