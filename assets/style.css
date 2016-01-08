@@ -1,8 +1,9 @@
 html {
-  background: rgba(140,109,190,1);
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(140,109,190,1)), color-stop(100%, rgba(235,129,120,1)));
-  background: linear-gradient(45deg, rgba(140,109,190,1) 0%, rgba(235,129,120,1) 100%);
+  background: rgba(140,109,190,1);;
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(140,109,190,1)), color-stop(100%, rgba(235,129,120,1)));;
+  background: linear-gradient(45deg, rgba(140,109,190,1) 0%, rgba(235,129,120,1) 100%) no-repeat center center fixed;;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c6dbe', endColorstr='#eb8178', GradientType=1 );
+  background-size: cover;
   margin: 0;
   min-height: 100%;
   padding: 0;
@@ -14,9 +15,10 @@ body {
   font-family: Raleway, Helvetica, 'Helvetica Neue', sans-serif;
   font-size: 20px;
   font-weight: 300;
-  line-height: 1.3;
   height: 100%;
+  line-height: 1.3;
   margin: 0;
+  /*min-height: 730px;*/
   padding: 0;
 }
 
@@ -35,6 +37,7 @@ main {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   height: 100%;
+  /*height: 680px;*/
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -111,6 +114,21 @@ footer {
   margin-bottom: 15px;
   text-align: center;
   width: 100%;
+}
+
+@media (max-height: 730px) {
+  body {
+    min-height: 730px;
+    position: relative;
+  }
+
+  main {
+    height: 680px;
+  }
+
+  footer {
+    position: absolute;
+  }
 }
 
 @media (max-width: 800px) {
