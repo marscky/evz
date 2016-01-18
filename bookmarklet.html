@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EVZ Bookmarklet version</title>
+  <title>EVZ - Hassle-free evaluation</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <div class="text">
+      <h1>EVZ Bookmarklet</h1>
+      <p>Just drag it to the bookmarks bar</p>
+    </div>
+    <a class="bookmarklet" href='javascript:var EVZ=function(a){function f(){b=a.createElement("iframe"),b.src="javascript:",a.body.appendChild(b)}function g(){b.onload=function(){c=b.contentWindow.document,d=c.body,"https://www.imhse.hku.hk/intranet/Evaluation/save.php"===c.location.href?(e.shift(),e.length>0&&h()):(d.querySelector('input[type="radio"][value="3"]').checked=!0,c.getElementsByName("submit")[0].click())}}function h(){b.src=e[0].href}var b,c,d,e=Array.prototype.slice.call(a.querySelectorAll("tr td:nth-child(4) a"));f(),g(),h()}(document);' title="Drag me to the bookmarks bar!">EVZ Bookmarklet</a>
+  </main>
+   <footer>
+    Made by Mars Cheng
+  </footer>
+</body>
+</html>
