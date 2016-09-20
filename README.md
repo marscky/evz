@@ -3,7 +3,7 @@ EVZ
 _Humanised, hassle-free evaluation._
 
 
-<img src="http://marscky.github.io/evz/assets/intro.png" alt="EVZ in action" width="400px">
+<img src="http://marscky.github.io/evz/assets/intro.png" alt="EVZ in action" height="400px"> <img src="http://marscky.github.io/evz/assets/intro0.png" alt="EVZ in action" height="400px">
 
 What is it?
 -----------
