@@ -1,0 +1,29 @@
+.items {
+  ul {
+    list-style-type: none;
+    margin: 8px 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .status {
+    float: right;
+    margin-left: 20px;
+    transform: translateY(25%);
+  }
+
+  .lo-circular {
+    @include lo-circular($font-size, $c-primary, $c-inactive);
+  }
+
+  .result {
+    @include result($font-size);
+    fill: $c-primary;
+  }
+}

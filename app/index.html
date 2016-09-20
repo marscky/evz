@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="asset/fonts/fonts.css">
+  <link rel="stylesheet" href="asset/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>EVZ</title>
+</head>
+<body>
+  <header class="content header sticky">
+    <span v-show="!loggedIn">
+      <p><b>Not logged in</b></p>
+    </span>
+    <span v-show="loggedIn">
+      <p><b>{{ uid }}</b></p>
+    </span>
+    <span class="fa fa-cog settings" @click="showMenu"></span>
+  </header>
+
+  <main class="content main">
+    <div v-show="!loggedIn">
+      <form @submit.prevent="login">
+        <input type="text" name="uid" placeholder="UID" v-model="uid">
+        <input type="password" name="pin" placeholder="PIN" v-model="pin">
+        <input type="submit" value="Login" class="button" :disabled="loggingIn">
+      </form>
+    </div>
+
+    <div class="items" v-show="loggedIn">
+      <ul>
+        <li v-for="item in items">
+          <span class="status" :class="{ 'lo-circular': !item.done && !item.error, 'result': item.done || item.error }">
+            <svg v-show="item.done && !item.error"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 448.8 448.8" xml:space="preserve" enable-background="new 0 0 448.8 448.8"><g id="check"><polygon points="142.8 323.85 35.7 216.75 0 252.45 142.8 395.25 448.8 89.25 413.1 53.55 "/></g></svg>
+            <svg v-show="item.error" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve"><g><g id="clear"><polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3 214.2,178.5"/></g></g></svg>
+          </span>
+          {{ item.title }}
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="content footer sticky">
+    {{ status ? status : 'Welcome to EVZ' }}
+  </footer>
+
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

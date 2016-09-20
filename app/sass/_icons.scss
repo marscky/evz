@@ -1,0 +1,27 @@
+@mixin result ($result-size) {
+  height: $result-size;
+  max-width: $result-size;
+  max-height: $result-size;
+  width: $result-size;
+}
+
+@mixin lo-circular ($lo-size, $lo-ring-color, $lo-bg-color) {
+  animation: lo-circ-rotate 1s infinite linear;
+  box-sizing: border-box;
+  background: transparent;
+  border: $lo-size/8 solid black;
+  border-color: $lo-ring-color $lo-bg-color $lo-bg-color;
+  border-radius: $lo-size/2;
+  height: $lo-size;
+  width: $lo-size;
+}
+
+@keyframes lo-circ-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,24 @@
+input[type="text"],
+input[type="password"] {
+  @include body-text;
+  border: none;
+  border-bottom: 2px solid $c-inactive;
+  display: block;
+  outline: none;
+  padding: 15px 0;
+  transition: color 0.2s, border 0.2s;
+  width: 100%;
+
+  &::-webkit-input-placholder {
+    color: $c-inactive;
+  }
+
+  &:focus {
+    border-bottom-color: $c-primary;
+    color: $c-primary;
+
+    &::-webkit-input-placholder {
+      color: $c-font;
+    }
+  }
+}

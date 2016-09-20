@@ -1,0 +1,14 @@
+# Dependency directory
+node_modules/
+
+# Logs
+*.log
+
+# Settings file
+.settings.json
+
+# Build files
+dist/
+
+# OSX
+.DS_Store

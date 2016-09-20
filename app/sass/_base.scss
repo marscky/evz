@@ -1,0 +1,72 @@
+// Stikcy header and footer from
+// https://codepen.io/anthonyLukes/pen/DLBeE
+*,
+*:before,
+*.after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-color: $c-bg;
+  @include body-text;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 0 6%;
+  width: 100%;
+}
+
+.sticky {
+  flex: 0 0 auto;
+}
+
+.header {
+  background-color: $c-bg;
+  box-shadow: 0 1px 7px 1px #d8d8d8;
+  margin-bottom: 5px;
+  position: relative;
+
+  p {
+    margin: 18px 0 15px 0;
+  }
+
+  .settings {
+    color: transparentize($c-font, 0.2);
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      color: $c-font;
+    }
+  }
+}
+
+.footer {
+  background-color: $c-bg;
+  border-top: 1px solid #cacaca;
+  color: #5a5a5a;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.main {
+  flex: 1 1 auto;
+  position: relative;
+  overflow-y: auto;
+}

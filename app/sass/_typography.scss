@@ -1,0 +1,14 @@
+$font-stack: BlinkMacSystemFont, Segoe UI, Source Sans Pro, Helvetica Neue, sans-serif;
+$font-size: 16px;
+$font-weight: 300;
+$line-height: 1.2;
+
+@mixin body-text {
+  color: $c-font;
+  font: {
+    family: $font-stack;
+    size: $font-size;
+    weight: $font-weight;
+  }
+  line-height: $line-height;
+}

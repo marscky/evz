@@ -1,0 +1,26 @@
+input[type="submit"] {
+  @include body-text;
+  background-color: $c-bg;
+  border: 1px solid $c-primary;
+  border-radius: 2px;
+  color: $c-font;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  outline: none;
+  padding: 9px;
+  transition: background-color 0.2s, color 0.2s, width 0.2s;
+  width: 100%;
+  -webkit-user-select: none;
+
+  &:hover,
+  &:focus {
+    background-color: $c-font;
+    color: $c-bg;
+  }
+
+  &:active {
+    background-color: $c-bg;
+    color: $c-font;
+  }
+}

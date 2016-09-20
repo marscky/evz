@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "Vue": false
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": "off",
+
+    "no-inner-declarations": ["error", "both"],
+    "curly": ["error", "all"],
+    "eqeqeq": ["error"],
+    "guard-for-in": ["error"],
+    "radix": ["error"],
+    "vars-on-top": ["error"],
+
+    "no-unused-vars": ["warn", { "args": "none" }],
+    "dot-location": ["warn", "property"],
+    "dot-notation": ["warn"],
+    "eol-last": ["warn"],
+    "wrap-iife": ["warn", "inside"],
+
+    "camelcase": ["warn"],
+    "comma-spacing": ["warn"],
+    "comma-style": ["warn"],
+    "computed-property-spacing": ["warn"],
+    "indent": ["warn", 2, { "SwitchCase": 1 }],
+    "linebreak-style": ["warn", "unix"],
+    "lines-around-comment": ["warn", {
+      "beforeLineComment": true,
+      "beforeBlockComment": true,
+      "allowBlockStart": true,
+      "allowObjectStart": true,
+      "allowArrayStart": true
+    }],
+    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+    "semi": ["warn", "always"]
+  }
+}

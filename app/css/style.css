@@ -1,0 +1,148 @@
+@keyframes lo-circ-rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+*,
+*:before,
+*.after {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+html {
+  background-color: #fff;
+  color: #8c6dbe;
+  font-family: BlinkMacSystemFont, Segoe UI, Source Sans Pro, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden; }
+
+.content {
+  margin: 0 auto;
+  padding: 0 6%;
+  width: 100%; }
+
+.sticky {
+  flex: 0 0 auto; }
+
+.header {
+  background-color: #fff;
+  box-shadow: 0 1px 7px 1px #d8d8d8;
+  margin-bottom: 5px;
+  position: relative; }
+  .header p {
+    margin: 18px 0 15px 0; }
+  .header .settings {
+    color: rgba(140, 109, 190, 0.8);
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%); }
+    .header .settings:hover {
+      color: #8c6dbe; }
+
+.footer {
+  background-color: #fff;
+  border-top: 1px solid #cacaca;
+  color: #5a5a5a;
+  padding-top: 12px;
+  padding-bottom: 12px; }
+
+.main {
+  flex: 1 1 auto;
+  position: relative;
+  overflow-y: auto; }
+
+input[type="text"],
+input[type="password"] {
+  color: #8c6dbe;
+  font-family: BlinkMacSystemFont, Segoe UI, Source Sans Pro, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  border: none;
+  border-bottom: 2px solid #d8d8d8;
+  display: block;
+  outline: none;
+  padding: 15px 0;
+  transition: color 0.2s, border 0.2s;
+  width: 100%; }
+  input[type="text"]::-webkit-input-placholder,
+  input[type="password"]::-webkit-input-placholder {
+    color: #d8d8d8; }
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-bottom-color: #8c6dbe;
+    color: #8c6dbe; }
+    input[type="text"]:focus::-webkit-input-placholder,
+    input[type="password"]:focus::-webkit-input-placholder {
+      color: #8c6dbe; }
+
+input[type="submit"] {
+  color: #8c6dbe;
+  font-family: BlinkMacSystemFont, Segoe UI, Source Sans Pro, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  background-color: #fff;
+  border: 1px solid #8c6dbe;
+  border-radius: 2px;
+  color: #8c6dbe;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  outline: none;
+  padding: 9px;
+  transition: background-color 0.2s, color 0.2s, width 0.2s;
+  width: 100%;
+  -webkit-user-select: none; }
+  input[type="submit"]:hover, input[type="submit"]:focus {
+    background-color: #8c6dbe;
+    color: #fff; }
+  input[type="submit"]:active {
+    background-color: #fff;
+    color: #8c6dbe; }
+
+.items ul {
+  list-style-type: none;
+  margin: 8px 0;
+  padding: 0; }
+
+.items li {
+  padding: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.items .status {
+  float: right;
+  margin-left: 20px;
+  transform: translateY(25%); }
+
+.items .lo-circular {
+  animation: lo-circ-rotate 1s infinite linear;
+  box-sizing: border-box;
+  background: transparent;
+  border: 2px solid black;
+  border-color: #8c6dbe #d8d8d8 #d8d8d8;
+  border-radius: 8px;
+  height: 16px;
+  width: 16px; }
+
+.items .result {
+  height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+  width: 16px;
+  fill: #8c6dbe; }
