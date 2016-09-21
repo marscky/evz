@@ -79,25 +79,6 @@ a {
   color: inherit;
 }
 
-span:first-child {
-  display: inline-block;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-}
-
-span:last-child {
-  visibility: hidden;
-}
-
-.btn:hover > span:first-child {
-  visibility: hidden;
-}
-
-.btn:hover > span:last-child {
-  visibility: visible;
-}
-
 footer {
   bottom: 0;
   color: rgba(255, 255, 255, 0.6);
