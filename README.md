@@ -19,11 +19,11 @@ Note that you should install EVZ on **ONLY ONE** machine at a time.
 2. In order to allow EVZ to be opened, `Right click` on the app and choose `Open` from the menu.
 3. A tick icon should appear in the menubar (see pic above).
 
-**Windows**
+~~**Windows**~~
 
-1. Unzip the downloaded file and drag `EVZ` folder to `C:\Program files`  folder.
-2. Open `EVZ.exe` inside the folder.
-3. A tick icon should appear in the notifications area of the taskbar.
+1. ~~Unzip the downloaded file and drag `EVZ` folder to `C:\Program files`  folder.~~
+2. ~~Open `EVZ.exe` inside the folder.~~
+3. ~~A tick icon should appear in the notifications area of the taskbar.~~
 
 Setting up
 ----------
