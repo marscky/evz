@@ -9,7 +9,7 @@
     "dev": "NODE_ENV=development electron --debug=5858 .",
     "ui": "NODE_ENV=ui electron .",
     "sass": "node-sass --watch app/sass/style.scss app/css/style.css",
-    "clean": "rm -f ./app/.settings.json",
+    "clean": "rm -rf ./app/.settings.json ./dist/",
     "pack-osx": "electron-packager . EVZ --platform=darwin --arch=x64 --out=dist/ --icon=app/asset/icons/icon.icns",
     "pack-win32": "electron-packager . EVZ --platform=win32 --arch=ia32 --out=dist/  --icon=app/asset/icons/icon.ico",
     "pack": "npm run clean && npm run pack-osx && npm run pack-win32"
@@ -17,7 +17,7 @@
   "author": "Mars Cheng <mc.return.void@gmail.com>",
   "license": "GPL-2.0",
   "devDependencies": {
-    "electron": "^1.3.5",
+    "electron": "^1.4.1",
     "electron-packager": "^8.0.0",
     "electron-rebuild": "^1.2.1",
     "node-sass": "^3.10.0"

@@ -20,7 +20,13 @@ const mb = menubar({
   alwaysOnTop: process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'ui'
 });
 
-const appLauncher = new AutoLaunch({ name: 'EVZ' });
+// Fix for auto-launch opening terminal on startup in OS X
+//  https://github.com/Teamwork/node-auto-launch/issues/28#issuecomment-222194437
+const appPath = mb.app.getPath('exe').split('.app/Content')[0] + '.app';
+const appLauncher = new AutoLaunch({
+  name: 'EVZ',
+  path: appPath
+});
 
 ipcMain.on('startAtLogin', function (event, startAtLogin) {
   return startAtLogin ? appLauncher.enable() : appLauncher.disable();
